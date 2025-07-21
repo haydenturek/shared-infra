@@ -1,0 +1,14 @@
+{
+  "availability-zones:account=731219764303:region=us-east-1": [
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
+    "us-east-1d",
+    "us-east-1e",
+    "us-east-1f"
+  ],
+  "hosted-zone:account=731219764303:domainName=haydenturek.com:region=us-east-1": {
+    "Id": "/hostedzone/Z09105323ILFXCL52Y6JG",
+    "Name": "haydenturek.com."
+  }
+}
