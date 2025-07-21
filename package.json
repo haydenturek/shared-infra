@@ -22,6 +22,6 @@
   "dependencies": {
     "aws-cdk-lib": "2.202.0",
     "constructs": "^10.0.0",
-    "haydenturek-constants": "^1.0.3"
+    "haydenturek-constants": "^1.0.4"
   }
 }
