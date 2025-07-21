@@ -292,7 +292,7 @@ export class SharedInfraStack extends cdk.Stack {
     )
 
     new ssm.StringParameter(this, 'VpcId', {
-      parameterName: `/${appName}/${environment}/frontend/vpc-id`,
+      parameterName: `/${appName}/${environment}/shared-infra/vpc-id`,
       stringValue: this.vpc.vpcId
     })
 
@@ -316,37 +316,37 @@ export class SharedInfraStack extends cdk.Stack {
     // })
 
     new ssm.StringParameter(this, 'EventBusName', {
-      parameterName: `/${appName}/${environment}/frontend/event-bus-name`,
+      parameterName: `/${appName}/${environment}/shared-infra/event-bus-name`,
       stringValue: this.eventBus.eventBusName
     })
 
     new ssm.StringParameter(this, 'SharedLogGroupName', {
-      parameterName: `/${appName}/${environment}/frontend/shared-log-group-name`,
+      parameterName: `/${appName}/${environment}/shared-infra/shared-log-group-name`,
       stringValue: this.sharedLogGroup.logGroupName
     })
 
     new ssm.StringParameter(this, 'LoadBalancerDns', {
-      parameterName: `/${appName}/${environment}/frontend/alb-dns`,
+      parameterName: `/${appName}/${environment}/shared-infra/alb-dns`,
       stringValue: this.loadBalancer.loadBalancerDnsName
     })
 
     new ssm.StringParameter(this, 'LoadBalancerARN', {
-      parameterName: `/${appName}/${environment}/frontend/alb-arn`,
+      parameterName: `/${appName}/${environment}/shared-infra/alb-arn`,
       stringValue: this.loadBalancer.loadBalancerArn
     })
 
     new ssm.StringParameter(this, 'HTTPSListenerARN', {
-      parameterName: `/${appName}/${environment}/frontend/alb-https-listener-arn`,
+      parameterName: `/${appName}/${environment}/shared-infra/alb-https-listener-arn`,
       stringValue: httpsListener.listenerArn
     })
 
     new ssm.StringParameter(this, 'CertificateARN', {
-      parameterName: `/${appName}/${environment}/frontend/certificate-arn`,
+      parameterName: `/${appName}/${environment}/shared-infra/certificate-arn`,
       stringValue: this.certificate.certificateArn
     })
 
     new ssm.StringParameter(this, 'GitHubActionsRoleArn', {
-      parameterName: `/${appName}/${environment}/frontend/github-actions-role-arn`,
+      parameterName: `/${appName}/${environment}/shared-infra/github-actions-role-arn`,
       stringValue: githubActionsRole.roleArn
     })
 
