@@ -1,4 +1,4 @@
-name: Deploy upload-service
+name: Deploy shared-infra
 
 on:
   push:
@@ -28,10 +28,6 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
-
-      # ---------- Authenticate to AWS via GitHub-→AWS OIDC ----------
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -39,7 +35,6 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install infra deps & deploy
-        working-directory: infra
         run: |
           npm ci
           npx cdk deploy --require-approval never
