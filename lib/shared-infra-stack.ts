@@ -13,6 +13,7 @@ import * as targets from 'aws-cdk-lib/aws-route53-targets'
 import * as s3 from 'aws-cdk-lib/aws-s3'
 import * as ssm from 'aws-cdk-lib/aws-ssm'
 import { Construct } from 'constructs'
+import { DOMAIN_NAME } from 'haydenturek-constants'
 
 export interface SharedInfraStackProps extends cdk.StackProps {
   appName: string
@@ -37,7 +38,7 @@ export class SharedInfraStack extends cdk.Stack {
     super(scope, id, props)
 
     const { appName, environment } = props
-    const domainName = 'haydenturek.com'
+    const domainName = DOMAIN_NAME
 
     // Create VPC with public and private subnets
     this.vpc = new ec2.Vpc(this, 'Vpc', {

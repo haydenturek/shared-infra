@@ -2,11 +2,12 @@
 import 'source-map-support/register'
 import * as cdk from 'aws-cdk-lib'
 import { SharedInfraStack } from '../lib/shared-infra-stack'
+import { APP_NAME } from 'haydenturek-constants'
 
 const app = new cdk.App()
 
 const env = app.node.tryGetContext('environment') || 'dev'
-const appName = 'haydenturek'
+const appName = APP_NAME
 
 new SharedInfraStack(app, `${appName}-${env}-shared-infra`, {
   env: {
